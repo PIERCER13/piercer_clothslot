@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piercer Cloth Slot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="app-container" style="display: none;">
+        <!-- Top Navbar Compacta -->
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-logo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1>PIERCER <span>CLOTH SLOT</span></h1>
+                    <p class="subtitle" id="t-subtitle">Inspetor de Slots e Pastas de Roupas</p>
+                </div>
+            </div>
+
+            <div class="topbar-actions">
+                <!-- Seletor de Idioma -->
+                <div class="lang-switch">
+                    <button id="lang-pt" class="lang-btn active" title="Português">PT</button>
+                    <span class="lang-divider">/</span>
+                    <button id="lang-en" class="lang-btn" title="English">EN</button>
+                </div>
+
+                <button id="btn-refresh" class="btn btn-secondary" title="Atualizar">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"></path></svg>
+                    <span id="t-btn-refresh">Atualizar</span>
+                </button>
+                <button id="btn-dump" class="btn btn-primary" title="Gerar Dump Completo">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"></path></svg>
+                    <span id="t-btn-dump">Gerar Dump</span>
+                </button>
+                <button id="btn-close" class="btn btn-icon btn-close" title="Fechar (ESC)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Compacto -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon icon-purple">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"></path></svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-label" id="t-stat-equipped">Peças no Corpo</span>
+                    <h2 id="stat-equipped" class="stat-value">-- / 12</h2>
+                    <span class="stat-sub" id="t-stat-equipped-sub">Componentes vestidos</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon icon-info">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"></path></svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-label" id="t-stat-addons">Packs / Addons</span>
+                    <h2 id="stat-addons" class="stat-value">--</h2>
+                    <span class="stat-sub" id="t-stat-addons-sub">Coleções carregadas</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon icon-warning">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-label" id="t-stat-model">Modelo do Ped</span>
+                    <h2 id="stat-model" class="stat-value text-purple">---</h2>
+                    <span class="stat-sub" id="t-stat-model-sub">Personagem atual</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon icon-danger">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-label" id="t-stat-slots">Total de Slots</span>
+                    <h2 id="stat-slots" class="stat-value">---</h2>
+                    <span class="stat-sub" id="t-stat-slots-sub">Indexados na base</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls Compacto -->
+        <section class="controls-bar">
+            <!-- Tabs -->
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-tab="equipped">
+                    <span class="dot dot-purple"></span>
+                    <span id="t-tab-equipped">No Corpo / Equipadas</span>
+                </button>
+                <button class="tab-btn" data-tab="search">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span id="t-tab-search">Buscar Roupas</span>
+                </button>
+                <button class="tab-btn" data-tab="collections">
+                    <span class="dot dot-info"></span>
+                    <span id="t-tab-collections">Coleções Carregadas</span>
+                </button>
+            </div>
+
+            <!-- Subcontrols for search tab -->
+            <div id="search-controls" class="filter-inputs hidden">
+                <div class="select-wrapper">
+                    <select id="select-search-category">
+                        <option value="">Todas as Peças</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="search-input" placeholder="Buscar por pasta (ex: nike, bagdad, jaqueta)...">
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Area -->
+        <main class="content-area">
+            <div id="loading" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p id="loading-text">Carregando informações...</p>
+            </div>
+
+            <!-- View: Equipped Clothes -->
+            <div id="view-equipped" class="view-panel">
+                <div id="equipped-list" class="cloth-grid"></div>
+            </div>
+
+            <!-- View: Search Clothes -->
+            <div id="view-search" class="view-panel hidden">
+                <div id="search-list" class="cloth-grid"></div>
+            </div>
+
+            <!-- View: Collections List -->
+            <div id="view-collections" class="view-panel hidden">
+                <div id="collections-list" class="collections-table-wrapper"></div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="statusbar">
+            <div class="status-left">
+                <span class="status-pill status-ready" id="t-status-ready">Pronto</span>
+                <span id="status-summary">Carregando dados...</span>
+            </div>
+            <div class="status-right">
+                <span id="status-hint">Pressione PageDown / PageUp para navegar nas roupas</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-message" id="toast-message">Notificação</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
