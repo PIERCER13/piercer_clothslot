@@ -271,7 +271,6 @@ body {
 .stat-sub { font-size: 0.62rem; color: var(--text-faint); }
 .text-purple { color: var(--accent-purple-light); }
 
-/* Controls */
 .controls-bar {
     padding: 8px 18px 10px 18px;
     display: flex;
