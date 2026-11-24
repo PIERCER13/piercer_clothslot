@@ -3,14 +3,10 @@ local vRP = Proxy and Proxy.getInterface("vRP")
 
 local textos = Config.textos
 
------------------------------------------------------------------------------------------------------------------------------------------
--- AJUDANTES DE PERMISSÃO (Bridge + vRP)
------------------------------------------------------------------------------------------------------------------------------------------
 local function ehAdmin(src)
 	src = tonumber(src)
 	if not src or src == 0 then return true end
 
-	-- 1. framezero_bridge
 	if framezero and framezero.HasPermission then
 		for _, perm in ipairs(Config.permissoesBridge or { 'admin', 'Admin' }) do
 			local ok, res = pcall(framezero.HasPermission, src, perm)
@@ -18,7 +14,6 @@ local function ehAdmin(src)
 		end
 	end
 
-	-- 2. vRP fallback
 	if vRP and vRP.getUserId then
 		local userId = vRP.getUserId(src)
 		if userId and vRP.hasPermission(userId, Config.permissao) then
@@ -26,7 +21,6 @@ local function ehAdmin(src)
 		end
 	end
 
-	-- 3. ACE permission
 	if IsPlayerAceAllowed(src, 'piercer.admin') or IsPlayerAceAllowed(src, 'command.clothslot') then
 		return true
 	end
