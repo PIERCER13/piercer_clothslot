@@ -74,9 +74,6 @@ local function gerarDump(ped, modelo)
 	avisar('aviso', textos.dumpEnviando:format(#linhas - 1))
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- /roupaslot <coleção> <peça> <número>  ->  em qual slot do jogo essa roupa está
------------------------------------------------------------------------------------------------------------------------------------------
 local function consultarSlot(ped, args)
 	local peca = descobrirPeca(args[2])
 	local numero = tonumber(args[3])
@@ -99,9 +96,6 @@ local function consultarSlot(ped, args)
 	avisar('sucesso', textos.achouSlot:format(colecao, nomes[peca], numero, slot, texturas))
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- /roupaslot slot <peça> <slot>  ->  de qual coleção essa roupa vem
------------------------------------------------------------------------------------------------------------------------------------------
 local function consultarOrigem(ped, args)
 	local peca = descobrirPeca(args[2])
 	local slot = tonumber(args[3])
@@ -119,9 +113,6 @@ local function consultarOrigem(ped, args)
 	avisar('sucesso', textos.achouOrigem:format(slot, nomes[peca], origem, numero))
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- /roupaslot atual  ->  o que o personagem está vestindo agora
------------------------------------------------------------------------------------------------------------------------------------------
 local function mostrarRoupaAtual(ped)
 	local linhas = {}
 	for peca = 0, 11 do
@@ -140,9 +131,6 @@ local function mostrarRoupaAtual(ped)
 	avisar('aviso', textos.vejaConsole)
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- /roupaslot colecoes  ->  resumo de tudo que está carregado
------------------------------------------------------------------------------------------------------------------------------------------
 local function mostrarColecoes(ped)
 	local linhas = { 'colecao | peca | quantidade | slots do jogo' }
 	local quantidade = GetPedCollectionsCount(ped)
