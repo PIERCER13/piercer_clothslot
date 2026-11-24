@@ -173,7 +173,6 @@ function showToast(msg, isError = false) {
     }, 2800);
 }
 
-// Fetch equipped & collections data from FiveM client
 async function fetchClientData() {
     showLoading(true, t('statusLoading'));
     try {
