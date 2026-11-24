@@ -82,7 +82,6 @@ body {
     to { opacity: 1; transform: scale(1); }
 }
 
-/* Topbar */
 .topbar {
     display: flex;
     justify-content: space-between;
