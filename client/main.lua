@@ -285,7 +285,6 @@ local function vestirPorComando(ped, args)
 	vestir(ped, colecao, peca, math.floor(numero), math.floor(tonumber(args[5]) or 0))
 end
 
--- direcao: 1 vai para a próxima, -1 volta para a anterior (dá a volta no começo e no fim)
 local function passar(direcao)
 	local ped = pedFreemode()
 	if not ped then return avisar('negado', textos.soFreemode) end
