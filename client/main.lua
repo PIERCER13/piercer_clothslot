@@ -398,7 +398,6 @@ local function coletarDadosCompletos(cb)
 		end
 	end
 
-	-- 2. Coleta coleções carregadas
 	local colecoes = {}
 	for i = 0, totalColecoes - 1 do
 		local col = GetPedCollectionName(ped, i) or ''
@@ -428,7 +427,6 @@ local function coletarDadosCompletos(cb)
 		end
 	end
 
-	-- 3. Mapeia pastas usando o cache ou solicita ao server
 	for _, item in ipairs(pecas) do
 		if item.collection and item.collection ~= 'base' then
 			local chave = ('%s|%s|%d'):format(item.collection, item.componentName, item.number)
