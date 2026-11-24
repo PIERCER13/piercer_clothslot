@@ -173,9 +173,6 @@ RegisterNetEvent('piercer_clothslot:searchNui', function(modelo, texto, queryId)
 	TriggerClientEvent('piercer_clothslot:searchResult', src, queryId, achados)
 end)
 
------------------------------------------------------------------------------------------------------------------------------------------
--- RECEBE DUMP E SALVA NO ARQUIVO
------------------------------------------------------------------------------------------------------------------------------------------
 local function salvarDump(src, modelo, texto)
 	local recurso = GetCurrentResourceName()
 	local arquivo = 'data/dump_' .. modelo .. '.txt'
