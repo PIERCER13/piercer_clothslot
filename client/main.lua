@@ -152,9 +152,6 @@ local function mostrarColecoes(ped)
 	avisar('aviso', textos.colecoesCarregadas:format(quantidade))
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- /roupaslot painel  ->  mostra na tela a pasta de cada roupa addon que você está vestindo
------------------------------------------------------------------------------------------------------------------------------------------
 local painelLigado = false
 local painelModelo = nil
 local painelPecas = {}      -- o que está vestido: { peca, slot, textura, colecao, numero }
@@ -171,7 +168,6 @@ local function escreverTexto(texto, x, y, escala, r, g, b)
 	DrawText(x, y)
 end
 
--- Olha o que o personagem veste e, se mudou algo, pede as pastas ao servidor
 local function atualizarPainel(ped, modelo)
 	local partes = {}
 	for peca = 0, 11 do
