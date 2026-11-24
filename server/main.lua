@@ -209,19 +209,14 @@ RegisterNetEvent('piercer_clothslot:save', function(modelo, texto)
 	salvarDump(src, modelo, texto)
 end)
 
------------------------------------------------------------------------------------------------------------------------------------------
--- COMANDOS
------------------------------------------------------------------------------------------------------------------------------------------
 local comandos = Config.comandos or { 'clothslot', 'roupaslot' }
 
 for _, cmd in ipairs(comandos) do
 	RegisterCommand(cmd, function(src, args)
 		if ehAdmin(src) then
-			-- Se digitar sem argumentos, abre a interface NUI moderna
 			if not args or #args == 0 then
 				TriggerClientEvent('piercer_clothslot:openUI', src)
 			else
-				-- Se passar argumentos (ex: /clothslot vestir, /clothslot painel), roda ação direta
 				TriggerClientEvent('piercer_clothslot:run', src, args)
 				TriggerClientEvent('style_roupaslot:run', src, args)
 			end
