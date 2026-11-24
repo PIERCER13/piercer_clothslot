@@ -21,7 +21,6 @@ local function pedFreemode()
 	end
 end
 
--- Aceita a peça por nome ("jbib") ou por número ("11")
 local function descobrirPeca(valor)
 	if not valor then return end
 	valor = tostring(valor):lower()
@@ -34,7 +33,6 @@ local function descobrirPeca(valor)
 	end
 end
 
--- Procura a coleção pelo nome sem se preocupar com maiúsculas e minúsculas
 local function acharColecao(ped, procurada)
 	procurada = procurada:lower()
 	for i = 0, GetPedCollectionsCount(ped) - 1 do
