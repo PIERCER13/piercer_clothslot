@@ -377,7 +377,6 @@ local function coletarDadosCompletos(cb)
 	local addonsCount = 0
 	local totalColecoes = GetPedCollectionsCount(ped)
 
-	-- 1. Coleta itens vestidos agora (0 a 11)
 	for peca = 0, 11 do
 		local slot = GetPedDrawableVariation(ped, peca)
 		local textura = GetPedTextureVariation(ped, peca)
