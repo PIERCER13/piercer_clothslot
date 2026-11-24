@@ -1,23 +1,16 @@
 local textos = Config.textos
 local nomes = Config.componentes
 
--- Monta o caminho inverso: "jbib" -> 11
 local numeroDaPeca = {}
 for numero, nome in pairs(nomes) do
 	numeroDaPeca[nome] = numero
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- AJUDANTES
------------------------------------------------------------------------------------------------------------------------------------------
-
--- Avisa o admin na tela e deixa uma cópia no console (F8)
 local function avisar(tipo, mensagem)
 	TriggerEvent('Notify', tipo, mensagem, Config.tempoNotificacao)
 	print('^3[roupaslot]^7 ' .. mensagem)
 end
 
--- Devolve o ped e o nome do modelo, ou nada se não for freemode
 local function pedFreemode()
 	local ped = PlayerPedId()
 	local modelo = GetEntityModel(ped)
