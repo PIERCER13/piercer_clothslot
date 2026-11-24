@@ -43,7 +43,6 @@ local function acharColecao(ped, procurada)
 	end
 end
 
--- Dado o slot do jogo, descobre de qual coleção ele vem e qual o número dentro dela
 local function acharOrigem(ped, peca, slot)
 	for i = 0, GetPedCollectionsCount(ped) - 1 do
 		local colecao = GetPedCollectionName(ped, i) or ''
@@ -56,11 +55,7 @@ local function acharOrigem(ped, peca, slot)
 	end
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- DUMP: lista todas as roupas e manda para o servidor salvar
------------------------------------------------------------------------------------------------------------------------------------------
 local function gerarDump(ped, modelo)
-	-- uma linha por roupa: peça;coleção;número;slot;texturas
 	local linhas = { 'comp;colecao;local;global;texturas' }
 
 	for i = 0, GetPedCollectionsCount(ped) - 1 do
