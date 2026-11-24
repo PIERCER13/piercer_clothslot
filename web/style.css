@@ -33,7 +33,6 @@
     -webkit-font-smoothing: antialiased;
 }
 
-/* Fundo transparente total ao redor da tela */
 body {
     background: transparent !important;
     background-color: transparent !important;
