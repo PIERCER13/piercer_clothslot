@@ -433,7 +433,6 @@ function escapeHtml(str) {
     }[m]));
 }
 
-// Tab navigation
 document.querySelectorAll('.filter-tabs .tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-tabs .tab-btn').forEach(b => b.classList.remove('active'));
@@ -461,7 +460,6 @@ window.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeApp();
 });
 
-// FiveM Message Listener
 window.addEventListener('message', event => {
     const item = event.data;
     if (item && item.action === 'open') {
@@ -479,7 +477,6 @@ window.addEventListener('message', event => {
     }
 });
 
-// Standalone test
 if (!isFiveM) {
     appEl.style.display = 'flex';
     document.addEventListener('DOMContentLoaded', () => {
