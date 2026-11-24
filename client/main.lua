@@ -301,9 +301,6 @@ RegisterCommand('roupaslot_anterior', function() passar(-1) end, false)
 RegisterKeyMapping('roupaslot_proxima', 'Roupaslot: próxima roupa', 'keyboard', Config.teclas.proxima)
 RegisterKeyMapping('roupaslot_anterior', 'Roupaslot: roupa anterior', 'keyboard', Config.teclas.anterior)
 
------------------------------------------------------------------------------------------------------------------------------------------
--- /roupaslot buscar <texto>  ->  acha roupas pelo nome da pasta (o servidor procura, aqui só mostramos)
------------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent('style_roupaslot:resultadoBusca', function(texto, total, achados)
 	if total == 0 then
 		return avisar('aviso', textos.buscaVazia:format(texto))
@@ -328,9 +325,6 @@ RegisterNetEvent('style_roupaslot:resultadoBusca', function(texto, total, achado
 	avisar('sucesso', textos.buscaResumo:format(total, texto, #achados))
 end)
 
------------------------------------------------------------------------------------------------------------------------------------------
--- O servidor chama aqui depois de conferir a permissão
------------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent('style_roupaslot:run', function(args)
 	local ped, modelo = pedFreemode()
 	if not ped then
@@ -365,9 +359,6 @@ RegisterNetEvent('style_roupaslot:run', function(args)
 	end
 end)
 
------------------------------------------------------------------------------------------------------------------------------------------
--- NUI INTERFACE MODERNA (PIERCER CLOTH SLOT)
------------------------------------------------------------------------------------------------------------------------------------------
 local isUiOpen = false
 
 CreateThread(function()
