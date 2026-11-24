@@ -169,7 +169,6 @@ body {
     font-size: 0.65rem;
 }
 
-/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -217,7 +216,6 @@ body {
     border-color: rgba(239, 68, 68, 0.4);
 }
 
-/* Stats */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
