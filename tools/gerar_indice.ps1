@@ -1,7 +1,3 @@
-# Gera o index.lua: liga cada roupa addon (modelo|colecao|peca|numero) à pasta dela dentro do style-cloth-addon.
-# Rode de novo sempre que mexer nas pastas de roupa:
-#   powershell -ExecutionPolicy Bypass -File gerar_indice.ps1
-
 param(
 	[string]$Stream = (Join-Path $PSScriptRoot '..\..\..\[framezero-cloth]\style-cloth-addon\stream'),
 	[string]$Saida  = (Join-Path $PSScriptRoot '..\data\index.lua')
