@@ -322,7 +322,6 @@ function renderCollections() {
     collectionsList.innerHTML = html;
 }
 
-// Search feature
 async function executeSearch() {
     const q = searchInput.value.trim();
     if (q.length < 2) return;
