@@ -484,7 +484,6 @@ body {
     background: rgba(139, 92, 246, 0.05);
 }
 
-/* Statusbar */
 .statusbar {
     padding: 6px 18px;
     border-top: 1px solid var(--border-color);
