@@ -1,9 +1,3 @@
-/**
- * Piercer Cloth Slot - Frontend App Compacto
- * Paleta: #09090B, #151419, #25212B, #8B5CF6
- * Suporte Multilíngue: PT-BR & EN
- */
-
 const I18N = {
     pt: {
         subtitle: 'Inspetor de Slots e Pastas de Roupas',
@@ -81,7 +75,6 @@ const isFiveM = (typeof window.GetParentResourceName === 'function') ||
 
 const resourceName = isFiveM ? window.GetParentResourceName() : 'piercer_clothslot';
 
-// State
 let state = {
     activeTab: 'equipped',
     equippedItems: [],
@@ -93,7 +86,6 @@ let state = {
     selectedSearchCategory: ''
 };
 
-// DOM
 const appEl = document.getElementById('app');
 const statEquipped = document.getElementById('stat-equipped');
 const statAddons = document.getElementById('stat-addons');
