@@ -6,7 +6,7 @@ Config.comandos = {
 	'roupaslot'
 }
 
--- Permissões necessárias (resolvidas via framezero_bridge ou vRP)
+-- Permissões necessárias
 Config.permissao = 'admin.acess'
 Config.permissoesBridge = { 'admin', 'Admin', 'admin.acess', 'superadmin', 'owner' }
 
