@@ -60,7 +60,6 @@ foreach ($g in ($grupos.Keys | Sort-Object)) {
 	}
 }
 
-# ---- coleções sem .meta ---------------------------------------------------------------------------------------------------------------
 $semMeta = New-Object System.Collections.Generic.List[string]
 foreach ($pastaColecao in Get-ChildItem -LiteralPath $Stream -Directory | Where-Object { $_.Name -match '^mp_[mf]_freemode_01_addon\d*$' }) {
 	if (-not (Test-Path -LiteralPath (Join-Path $Data ($pastaColecao.Name + '.meta')))) {
@@ -68,7 +67,6 @@ foreach ($pastaColecao in Get-ChildItem -LiteralPath $Stream -Directory | Where-
 	}
 }
 
-# ---- resumo na tela ---------------------------------------------------------------------------------------------------------------------
 function Mostrar($titulo, $lista) {
 	Write-Host ''
 	Write-Host ('{0}: {1}' -f $titulo, $lista.Count) -ForegroundColor Cyan
