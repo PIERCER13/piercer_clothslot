@@ -73,9 +73,6 @@ local function listarMudancas(antigo, novo)
 	return mudancas
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- ÍNDICE DE PASTAS (index.lua)
------------------------------------------------------------------------------------------------------------------------------------------
 local indice = { caminhos = {}, duvidosos = {} }
 
 local function carregarIndice()
@@ -94,7 +91,6 @@ AddEventHandler('onResourceStart', function(recurso)
 	end
 end)
 
--- Retorna os caminhos de pastas para os itens solicitados
 local function obterCaminhos(modelo, itens)
 	local caminhos = {}
 	if not modeloValido(modelo) or type(itens) ~= 'table' then return caminhos end
