@@ -186,7 +186,6 @@ async function fetchClientData() {
                 applyServerData(data);
             }
         } else {
-            // Mock preview data for standalone browser testing
             applyServerData({
                 model: 'mp_m_freemode_01',
                 equippedCount: 8,
