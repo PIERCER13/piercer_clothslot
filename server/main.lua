@@ -164,7 +164,6 @@ RegisterNetEvent('style_roupaslot:buscar', function(modelo, texto)
 	TriggerClientEvent('style_roupaslot:resultadoBusca', src, texto, total, legacy)
 end)
 
--- Evento de busca chamado pela NUI
 RegisterNetEvent('piercer_clothslot:searchNui', function(modelo, texto, queryId)
 	local src = source
 	if not ehAdmin(src) then return end
