@@ -122,7 +122,6 @@ RegisterNetEvent('piercer_clothslot:caminhos', function(modelo, itens)
 	TriggerClientEvent('piercer_clothslot:caminhos', src, caminhos)
 end)
 
--- Busca por texto no nome da pasta
 local function executarBusca(modelo, texto)
 	local procurado = texto:lower()
 	local prefixo = modelo .. '|'
@@ -158,7 +157,6 @@ RegisterNetEvent('style_roupaslot:buscar', function(modelo, texto)
 	if not modeloValido(modelo) or type(texto) ~= 'string' or #texto < 2 then return end
 
 	local total, achados = executarBusca(modelo, texto)
-	-- Converte para formato legacy
 	local legacy = {}
 	for _, it in ipairs(achados) do
 		legacy[#legacy + 1] = { it.collection, it.piece, it.number, it.folder }
