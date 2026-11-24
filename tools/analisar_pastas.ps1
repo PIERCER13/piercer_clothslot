@@ -1,11 +1,3 @@
-# Confere as pastas do style-cloth-addon e gera um relatório em planilha.
-#   powershell -ExecutionPolicy Bypass -File analisar_pastas.ps1
-#
-# O que ele faz:
-#   - lista números faltando no meio da sequência (ex: tem jbib_050 e jbib_052, mas não o 051)
-#   - lista roupas sem textura (.ytd)
-#   - lista coleções que estão no stream mas não têm .meta na pasta data
-#   - gera o relatorio_roupas.csv com todas as roupas (abre no Excel)
 
 param(
 	[string]$Cloth  = (Join-Path $PSScriptRoot '..\..\..\[framezero-cloth]\style-cloth-addon'),
@@ -35,7 +27,6 @@ foreach ($arquivo in Get-ChildItem -LiteralPath $Stream -Recurse -File) {
 	}
 }
 
-# ---- relatório CSV -------------------------------------------------------------------------------------------------------------------
 $linhas = New-Object System.Collections.Generic.List[string]
 $linhas.Add('modelo;colecao;peca;numero;texturas;pasta')
 $semTextura = New-Object System.Collections.Generic.List[string]
@@ -49,7 +40,6 @@ foreach ($chave in ($roupas.Keys | Sort-Object)) {
 }
 [System.IO.File]::WriteAllLines($Saida, $linhas, (New-Object System.Text.UTF8Encoding($true)))
 
-# ---- números faltando ---------------------------------------------------------------------------------------------------------------
 $grupos = @{}
 foreach ($chave in $roupas.Keys) {
 	$p = $chave -split '\|'
