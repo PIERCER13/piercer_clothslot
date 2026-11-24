@@ -364,7 +364,6 @@ body {
     gap: 8px;
 }
 
-/* Cloth Item Cards */
 .cloth-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
