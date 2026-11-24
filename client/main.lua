@@ -254,10 +254,6 @@ local function alternarPainel()
 	end)
 end
 
------------------------------------------------------------------------------------------------------------------------------------------
--- /roupaslot vestir <coleção> <peça> <número> [textura]  ->  veste a roupa na hora para você ver como fica
--- /roupaslot proxima | anterior (ou as teclas do config)  ->  passa pelas roupas da coleção uma a uma
------------------------------------------------------------------------------------------------------------------------------------------
 local navegacao = nil -- { colecao, peca, numero, textura } da última roupa escolhida
 
 local function vestir(ped, colecao, peca, numero, textura)
