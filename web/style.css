@@ -61,7 +61,6 @@ body {
     background: var(--accent-purple);
 }
 
-/* Container */
 .app-container {
     display: none;
     width: 960px;
