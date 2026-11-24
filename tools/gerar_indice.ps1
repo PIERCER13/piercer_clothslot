@@ -17,8 +17,6 @@ Get-ChildItem -LiteralPath $Stream -Recurse -File -Filter *.ydd | ForEach-Object
 	}
 }
 
-# Grupos (modelo|colecao|peca) com número faltando na sequência: nesses, o número do arquivo
-# pode não bater com o número da roupa dentro do jogo, então o painel avisa para conferir.
 $numerosPorGrupo = @{}
 foreach ($chave in $mapa.Keys) {
 	$p = $chave -split '\|'
